@@ -1,0 +1,263 @@
+/* Presenting Structure — a map room for practice.
+   Palette: paper #eef0ec (sage-tinted) · ink #232a26 · pine #3d5a4c ·
+   rust #9c5540 (flags) · line rgba(ink,.14) */
+
+:root {
+  --paper: #eef0ec;
+  --ink: #232a26;
+  --pine: #3d5a4c;
+  --rust: #9c5540;
+  --dim: #6d746e;
+  --line: rgba(35, 42, 38, 0.14);
+  --display: "Fraunces", Georgia, serif;
+  --sans: "Inter", -apple-system, system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.hidden { display: none !important; }
+.page { min-height: 100dvh; }
+
+/* ---------- landing ---------- */
+
+#landing {
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 4.5rem 1.5rem 3rem;
+}
+
+.eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--pine);
+  margin-bottom: 1rem;
+}
+
+#landing h1 {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(2rem, 6vw, 2.9rem);
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.25rem;
+}
+
+.lede { color: var(--ink); margin-bottom: 2.25rem; }
+
+.isnt {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 1.5rem 0;
+  margin-bottom: 2.25rem;
+}
+
+.isnt h2 {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: var(--rust);
+  margin-bottom: 0.5rem;
+}
+
+.isnt p { font-size: 0.95rem; color: var(--ink); }
+
+.primary {
+  background: var(--pine);
+  color: var(--paper);
+  border: none;
+  border-radius: 2px;
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 0.8rem 1.6rem;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.primary:hover { opacity: 0.88; }
+.primary:disabled { opacity: 0.45; cursor: default; }
+
+.fineprint { margin-top: 1.25rem; font-size: 0.8rem; color: var(--dim); }
+
+/* ---------- assessment layout ---------- */
+
+#assessment {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 2.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 1.5rem;
+}
+
+/* Signature element: the structure rail — candidates surface as the reading narrows. */
+.rail { position: sticky; top: 2.5rem; align-self: start; }
+
+.rail-title {
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--dim);
+  margin-bottom: 0.9rem;
+}
+
+#structure-rail { list-style: none; }
+
+#structure-rail li {
+  font-size: 0.82rem;
+  color: var(--dim);
+  padding: 0.28rem 0 0.28rem 0.9rem;
+  border-left: 2px solid var(--line);
+  transition: color 0.4s ease, border-color 0.4s ease;
+}
+
+#structure-rail li.candidate {
+  color: var(--pine);
+  border-left-color: var(--pine);
+  font-weight: 500;
+}
+
+#structure-rail li .n {
+  font-family: var(--display);
+  margin-right: 0.4rem;
+}
+
+.phase-label {
+  margin-top: 1.25rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--rust);
+}
+
+/* ---------- conversation ---------- */
+
+.conversation {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100dvh - 4rem);
+}
+
+.thread {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  padding-bottom: 1.25rem;
+}
+
+.msg { max-width: 60ch; animation: settle 0.5s ease both; }
+
+.msg.facilitator { font-size: 0.98rem; }
+
+.msg.facilitator .speaker {
+  font-family: var(--display);
+  font-size: 0.85rem;
+  color: var(--pine);
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.msg.person {
+  align-self: flex-end;
+  background: rgba(61, 90, 76, 0.08);
+  border-radius: 4px;
+  padding: 0.6rem 0.9rem;
+  font-size: 0.95rem;
+}
+
+.msg.error { color: var(--rust); font-size: 0.9rem; }
+
+@keyframes settle {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: none; }
+}
+
+.thinking {
+  display: inline-block;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--pine);
+  animation: breathe 2.6s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  0%, 100% { opacity: 0.25; transform: scale(0.85); }
+  50%      { opacity: 0.9;  transform: scale(1.15); }
+}
+
+.compose {
+  display: flex;
+  gap: 0.6rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+}
+
+.compose textarea {
+  flex: 1;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 1rem;
+  line-height: 1.5;
+  padding: 0.6rem 0.8rem;
+  resize: none;
+}
+
+.compose textarea:focus { outline: none; border-color: var(--pine); }
+
+.session-actions {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: flex-end;
+  padding-top: 0.6rem;
+}
+
+.quiet {
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  color: var(--dim);
+  font-size: 0.8rem;
+  padding: 0.35rem 0.8rem;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.quiet:hover { color: var(--ink); border-color: var(--dim); }
+
+/* Accessibility & responsive */
+:focus-visible { outline: 2px solid var(--pine); outline-offset: 2px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .msg { animation: none; }
+  .thinking { animation: none; opacity: 0.6; }
+}
+
+@media (max-width: 700px) {
+  #assessment { grid-template-columns: 1fr; gap: 1.25rem; padding-top: 1.5rem; }
+  .rail { position: static; }
+  #structure-rail { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+  #structure-rail li {
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 0.15rem 0.6rem;
+    font-size: 0.72rem;
+  }
+  #structure-rail li.candidate { border-color: var(--pine); }
+  #structure-rail li .name { display: none; }   /* chips show numbers only */
+  .conversation { min-height: auto; }
+}

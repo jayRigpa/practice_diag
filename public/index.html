@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Presenting Structure — a practice triage instrument</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- LANDING -->
+  <main id="landing" class="page">
+    <header class="masthead">
+      <p class="eyebrow">A practice triage instrument</p>
+      <h1>Which structure is carrying the weight?</h1>
+      <p class="lede">
+        A guided reading of your current practice configuration, grounded in an
+        eleven-structure diagnostic framework. A short screening, a few rounds of
+        questions, a dialogue to distinguish candidates — then a mapping: your
+        presenting structure, the practice directions the framework derives for
+        it, and its known failure modes.
+      </p>
+    </header>
+
+    <section class="isnt">
+      <h2>What this is not</h2>
+      <p>
+        It does not assess or certify awakening, stages, or attainments — and it will
+        decline if asked. It is not therapy, and not a substitute for a teacher.
+        If you are in acute difficulty, it will stop and point you toward qualified
+        human support instead. Structures are patterns currently carrying weight,
+        not types of people; the map is an instrument to be used and set down.
+      </p>
+    </section>
+
+    <button id="begin" class="primary">Begin the reading</button>
+    <p class="fineprint">One session, roughly 15–25 minutes. Your responses are sent to an AI model for the reading and are not stored by this site; you can export the transcript at the end.</p>
+  </main>
+
+  <!-- ASSESSMENT -->
+  <main id="assessment" class="page hidden">
+    <aside class="rail" aria-label="Structures under consideration">
+      <p class="rail-title">Structures</p>
+      <ol id="structure-rail"></ol>
+      <p id="phase-label" class="phase-label">screening</p>
+    </aside>
+
+    <section class="conversation">
+      <div id="thread" class="thread" aria-live="polite"></div>
+      <footer class="compose">
+        <textarea id="input" rows="2" placeholder="Reply…" autocomplete="off"></textarea>
+        <button id="send" class="primary">Send</button>
+      </footer>
+      <div class="session-actions">
+        <button id="export" class="quiet">Export transcript</button>
+        <button id="restart" class="quiet">Start over</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

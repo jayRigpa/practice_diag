@@ -1,0 +1,7 @@
+{
+  "name": "structure-triage",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "description": "Calibrated practice-structure triage grounded in the Stage 4 diagnostic framework. Static frontend + Netlify Function proxy to the Anthropic API."
+}
