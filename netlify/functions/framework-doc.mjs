@@ -1,12 +1,4 @@
-// ============================================================
-// FRAMEWORK DOCUMENT — PASTE THE FULL STAGE 4 MARKDOWN BELOW
-// ============================================================
-// Replace everything between the backticks with the complete
-// text of "Stage 4 — Practice Derivation as Diagnosis".
-// Keep the backticks. If the document itself contains backticks
-// (```), escape them as \`\`\` or the file will not parse.
-// Then: git add -A && git commit -m "framework" && git push
-
+export const FRAMEWORK_DOC = `
 # Stage 4 — Practice Derivation as Diagnosis
 
 Status: Stage 4 of 5, the primary deliverable. Derives practice selection from
@@ -443,28 +435,6 @@ Provisional confidence pending Stage 5: the structure-to-mechanism mappings
 inherit Stage 3's tags (mostly INFERRED on mechanism, ESTABLISHED on practice
 effects); the Structure 10 sequencing rule is the framework's highest-
 confidence clinical claim; the Structure 11 portfolio is the most [PR]-
-dependent section and the first place an adversarial pass should press.
-
-
-export const FRAMEWORK_DOC = `
-[PLACEHOLDER — the full Stage 4 document has not been pasted in yet.]
-
-Until the real document is present, the facilitator must tell users the
-instrument is not yet configured and decline to run assessments.
-
-Skeleton of the framework (structure names only, for wiring tests):
-1. (Structure 1)
-2. (Structure 2)
-3. (Structure 3)
-4. Craving and Seeking
-5. Aversion
-6. Strong Concentration, Weak Insight
-7. Strong Insight, Weak Stabilization
-8. Devotional Temperament
-9. Skeptical / Inquiry Temperament
-10. Trauma-Loaded and Parts-Dominated Systems
-11. Late Stage: Transparent Priors
 `;
 
-// Set to true once the real Stage 4 text has been pasted above.
 export const FRAMEWORK_READY = true;
